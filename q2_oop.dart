@@ -1,9 +1,9 @@
 abstract class MenuItem {
   double price();
-  
+  String nm();
 
   void show() {
-    print(':$price()');
+    print('${nm()} - ${price()} บาท');
   }
 }
 class com extends MenuItem {
@@ -13,11 +13,15 @@ class com extends MenuItem {
 
   @override
   double price() => basePrice;
-
+  String nm() => name;
 
 }
 
 void main() {
   MenuItem t1 = com('ลาเต้',65) ;
   t1.show();
+  MenuItem t2 = com('ข้าวผัด',90) ;
+  t2.show();
+  MenuItem t3 = com('อเมริกาโน่',45) ;
+  t3.show();
 }
